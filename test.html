@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="applicable-device" content="mobile">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <title>Title</title>
+    <style>
+       ul{list-style: none}
+        .ulTools {position:relative;width:640px;height:171px;padding:20px 0;margin:30px auto;background:#f7f7f7;border:2px solid #ddd;font-size:14px;
+            -webkit-border-radius:10px;
+        }
+        .ulTools li {padding:10px 0 10px 146px;line-height:37px;text-indent:-106px;}
+        .ulTools .liBut {position:absolute;top:40px;right:40px;width:90px;}
+        .ulTools .liBut input {width:84px;height:84px;background:#498FB8;border:3px solid #C6E3F1;color:#fff;font-size:14px;cursor:pointer;
+            -webkit-border-radius:5px;
+        }
+
+        .inpTxt {width:80px;height:35px;background:#fff;border:1px solid #ccc;line-height:35px;text-align:center;
+            -webkit-border-radius:5px;
+        }
+        .inpTxt_ {width:40px;}
+
+        #toolsr_1 {display:none;width:640px;padding:20px 0 10px;margin:30px auto;background:#EDF9FF;border:2px solid #C6E3F1;font-size:14px;color:#498FB8;
+            -webkit-border-radius:10px;}
+
+        .srHead {text-align:center;font-size:14px;font-weight:800;}
+        .srBody {width:640px;height:280px;margin:0 auto;}
+
+        .srBody table {width:80%;margin:12px auto 0;background:#EDF9FF;border-collapse:collapse;}
+        .srBody table td{border:1px #C6E3F1 solid;vertical-align:middle;text-align:center;height:28px;}
+
+        .srtextl {float:left;width:320px;}
+
+        .srtextb {padding:10px 0 0;text-align:center;}
+
+        .dtitle1 td,.dtitle2 td {background:#71abcd;color:#EDF9FF}
+
+        .col1 {background:#093}
+        .col2 {background:#F30}
+        .col3 {background:#F90}
+
+        .dTxt {width:550px;margin:0 auto;font-size:14px;line-height:24px;}
+
+        @media screen and (max-width:719px) {
+            /*工具*/
+            .ulTools {width:auto;height:auto;padding:20px 0;margin:0;background:none;border:0;-webkit-border-radius:0;}
+            .ulTools li {height:auto;padding:5px 0 5px 106px;line-height:26px;}
+            .inpTxt {width:27px;height:20px;line-height:20px;-webkit-border-radius:0;}
+            .ulTools .liBut {position:static;padding:10px 0 0;margin:auto;text-indent: 0;}
+            .ulTools .liBut input {height:40px;}
+
+            #toolsr_1 {width:auto;padding:0;margin:10px auto 30px;background:none;border:none;}
+
+            .srHead {text-align:left;}
+            .srBody {width:auto;height:auto;}
+
+            .srBody table {width:100%;}
+
+            .srtextl {float:none;width:100%;}
+
+            .dTxt {width:auto;margin:0;}
+            .dTxt .pCode {display:none;}
+
+            .ulTextlist_3_2 li {float:none;margin-top:6px;}
+
+            table td {font-size:12px;}
+        }
+
+    </style>
+
+</head>
+<body>
+<form method="post" name="frmInput" id="frmInput" onSubmit="DisplayCalendar();">
+    <ul class="ulTools">
+        <li>最短月经周期： <input type="text" name="txtMinMensesCyc" maxlength="2" value="28" class="inpTxt inpTxt_1"> 天</li>
+        <li>最长月经周期： <input type="text" name="txtMaxMensesCyc" maxlength="2" value="28" class="inpTxt inpTxt_1"> 天</li>
+        <li>上次月经时间： <input type="text" name="txtYear" value="" maxlength="4" id="year_0" class="inpTxt inpTxt_2 inpYear"> 年 <input type="text" name="txtMonth" value="" maxlength="2" id="month_0" class="inpTxt inpTxt_1 inpMonth"> 月 <input type="text" name="txtDay" value="" size="2" maxlength="2"  id="day_0" class="inpTxt inpTxt_1 inpDay"> 日</li>
+        <li class="liBut"><input type="button" name="btnCalculate" value="计 算" onclick="check();"></li>
+    </ul>
+</form>
+<div id="toolsr_1" class="toolsr toolsr_1">
+    <div class="srHead">排卵期计算结果</div>
+    <div class="srBody">
+        <div class="srtextl" id="Calendar1"></div>
+        <div class="srtextl" id="Calendar2"></div>
+        <p class="srtextb clear">
+              <span class="col1">　
+            　</span> <span>安全期</span> <span class="col2"> 　
+            　</span> <span>排卵期</span> <span class="col3">　
+            　</span> <span>月经期</span>
+        </p>
+    </div>
+</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/1.js"></script>
+</body>
+</html>
